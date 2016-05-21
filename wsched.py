@@ -65,8 +65,12 @@ def tableprint_schedule():
     # prepare the table
     t = PrettyTable(['Day', 'Date', 'Schedule'])
 
-    # iterates over all three lists simultaneously 
-    for x, y, z in zip(realdays, newdates, newschedule):
+    # iterates over all three lists simultaneously. the junk after 'newdates'
+    # is necessary, because 'zip' cuts off the last element in the 'realdays'
+    # and 'newschedule' lists, because 'newdates' is one element shorter than
+    # them. this is because the spreadsheet formatting is screwed up and xlrd
+    # won't pull the actual dates from it. welp!
+    for x, y, z in zip(realdays, newdates[0:]+[float('nan')], newschedule):
         if z[0] == '':
             z = '0'
         t.add_row([x, y, ' - '.join(map(str, z))])
