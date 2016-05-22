@@ -3,6 +3,21 @@
 #
 # wsched.py -- a little script to extract my hours from the brutally hard-to-read
 # schedule spreadsheet at work.
+#
+# sample output:
+#
+# ner ~/dev/prj/scripts % python wsched.py ~/schedule.xls 1
+# +-----------+-------+-----------+
+# |    Day    |  Date |  Schedule |
+# +-----------+-------+-----------+
+# |   Sunday  | 05-01 | 1.0 - 6.5 |
+# |   Monday  | 05-02 |     0     |
+# |  Tuesday  | 05-03 | 1.0 - 9.5 |
+# | Wednesday | 05-04 | 9.5 - 5.0 |
+# |  Thursday | 05-05 | 9.5 - 4.0 |
+# |   Friday  | 05-06 |     0     |
+# |  Saturday |  nan  | 9.5 - 6.0 |
+# +-----------+-------+-----------+
 
 import xlrd
 import argparse
