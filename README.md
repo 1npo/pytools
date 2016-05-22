@@ -1,2 +1,2 @@
 # scripts
-Little scripts that do various small tasks.
+Little single-file scripts that do various small tasks.
