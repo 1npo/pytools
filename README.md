@@ -1,2 +1,2 @@
-# scripts
-Little single-file Python scripts that do various small tasks.
+# pytools
+A collection of single-file Python scripts that do various tasks.
